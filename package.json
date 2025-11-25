@@ -1,0 +1,27 @@
+{
+  "name": "rickandmorty",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danylyoenko2/RickAndMorty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danylyoenko2/RickAndMorty/issues"
+  },
+  "homepage": "https://github.com/danylyoenko2/RickAndMorty#readme",
+  "dependencies": {
+    "parcel": "^2.16.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.1"
+  }
+}
