@@ -7,27 +7,15 @@ img {
 .filter {
   display: flex;
   justify-content: center;
-}
-.filter-list {
-  display: flex;
-  gap: 16px;
-  position: relative;
-  max-width: 1000px;
-}
-
-.filter__title {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 129%;
-  color: var($color-text-primary);
-  margin-bottom: 6px;
-}
-
-.filter-text {
-  max-width: 180px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  border: 2px solid var($color-text-primary);
-  border-radius: 100px;
-  padding: 16px 24px;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 230px;
+  padding: 20px;
+  &__action {
+    cursor: pointer;
+    transition: 0.2s ease;
+    border: 2px solid $color-text-primary;
+    border-radius: 100px;
+    padding: 16px 24px;
+  }
 }
