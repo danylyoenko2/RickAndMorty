@@ -1,0 +1,64 @@
+.slider__container {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 24px 0px 80px;
+  background: $color-background-text;
+  border-radius: 50px;
+}
+
+.slider__title {
+  max-width: 306px;
+  padding: 20px 0 0 50px;
+  font-size: 28px;
+  margin-bottom: 34px;
+  color: $color-background-primary;
+}
+
+.slider__title .highlight {
+  background: $color-background-secondary;
+  color: $color-background-text;
+  padding: 1px 6px;
+  border-radius: 12px;
+}
+
+.episodes__scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.episode__card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid $color-background-secondary;
+}
+
+.episodes__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+  background: $color-background-secondary;
+  color: $color-background-text;
+  padding: 10px 20px;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.episodes__scroll {
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.episode__card {
+  flex: 0 0 auto;
+  width: 150px;
+}
