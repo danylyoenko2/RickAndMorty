@@ -19,10 +19,10 @@
     "url": "https://github.com/danylyoenko2/RickAndMorty/issues"
   },
   "homepage": "https://github.com/danylyoenko2/RickAndMorty#readme",
-  "dependencies": {
-    "parcel": "^2.16.1"
-  },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.16.1"
+    "@parcel/transformer-inline-string": "^2.16.1",
+    "@parcel/transformer-sass": "^2.16.1",
+    "handlebars": "^4.7.8",
+    "parcel": "^2.16.1"
   }
 }
