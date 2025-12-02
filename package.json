@@ -23,6 +23,7 @@
     "parcel": "^2.16.1"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.16.1"
+    "@parcel/transformer-sass": "^2.16.1",
+    "posthtml-include": "^2.0.1"
   }
 }
