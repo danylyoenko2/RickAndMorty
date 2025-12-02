@@ -1,12 +1,12 @@
 .decorative_buttons-wrapper {
   position: relative;
-  width: 1308px;
+  width: 1208px;
   height: 150px;
   align-items: center;
   overflow: hidden;
   display: flex;
   white-space: nowrap;
-  animation: scroll 13s linear infinite;
+  animation: scroll 10s linear infinite;
 }
 
 .decorative_button {
@@ -14,7 +14,7 @@
   display: inline-block;
   font-size: 17px;
   font-weight: 600;
-  background: #a1d737;
+  background: $color-background-secondary;
   border-radius: 25px;
   opacity: 1;
   padding-top: 14px;
@@ -37,21 +37,21 @@
 .t5,
 .t8,
 .t10 {
-  background: #0d1a22;
-  color: white;
+  background: $color-background-text;
+  color: $color-background-primary;
 }
 .light-green {
-  background: #daf836;
+  background: $color-background-decor;
 }
 .light-green-text {
-  color: #daf836;
+  color: $color-background-decor;
 }
 .green-text {
-  color: #a1d737;
+  color: $color-background-secondary;
 }
 
 .t1 {
-  left: 120px;
+  left: 100px;
   top: 30px;
 }
 .t2 {
