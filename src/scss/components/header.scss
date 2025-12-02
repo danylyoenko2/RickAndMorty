@@ -1,0 +1,40 @@
+.header {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #0d171d;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+.nav__btn {
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d171d;
+}
+.characters {
+  background: #a1d737;
+}
+.episodes {
+  background: #0d171d;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+}
+.search__btn {
+  background: transparent;
+  border: 1px solid gray;
+  color: #fafafa;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+}
