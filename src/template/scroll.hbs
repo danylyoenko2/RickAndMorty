@@ -1,0 +1,15 @@
+<div class="slider__container container">
+  <h2 class="slider__title">Ready to
+    <span class="highlight">explore</span>
+    the crazy world of Rick and Morty?</h2>
+
+  <div class="episodes__scroll">
+    {{#each this}}
+      <div class="episode__card">
+        <img src="{{image}}" alt="episode image" />
+      </div>
+    {{/each}}
+  </div>
+
+  <button class="episodes__btn button">Episodes</button>
+</div>
