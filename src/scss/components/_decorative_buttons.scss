@@ -1,15 +1,13 @@
 .decorative_buttons {
   overflow: hidden;
-}
-.text-container {
-  overflow: hidden;
+  height: 100%;
+  max-height: 150px;
 }
 
-.decorative_buttons-wrapper {
+.decorative-buttons__container {
   position: relative;
-  width: 1408px;
-  height: 150px;
-
+  height: 100%;
+  max-height: 150px;
   align-items: center;
   overflow: hidden;
   display: flex;
@@ -17,7 +15,7 @@
   animation: scroll 10s linear infinite;
 }
 
-.decorative_button {
+.decorative-buttons__item {
   position: absolute;
   display: inline-block;
   font-size: 17px;
@@ -41,75 +39,75 @@
   }
 }
 
-.t3,
-.t5,
-.t8,
-.t10 {
+.decorative-buttons__item--t3,
+.decorative-buttons__item--t5,
+.decorative-buttons__item--t8,
+.decorative-buttons__item--t10 {
   background: $color-background-text;
   color: $color-background-primary;
 }
-.light-green {
+.decorative-buttons__item--light-green {
   background: $color-background-decor;
 }
-.light-green-text {
+.decorative-buttons__item--light-green-text {
   color: $color-background-decor;
 }
-.green-text {
+.decorative-buttons__item--green-text {
   color: $color-background-secondary;
 }
 
-.t1 {
+.decorative-buttons__item--t1 {
   left: 100px;
   top: 30px;
 }
-.t2 {
+.decorative-buttons__item--t2 {
   left: 190px;
   top: 20px;
   transform: rotate(31deg);
 }
-.t3 {
+.decorative-buttons__item--t3 {
   left: 50px;
   top: 75px;
 }
-.t4 {
+.decorative-buttons__item--t4 {
   left: 300px;
   top: 75px;
 }
-.t5 {
+.decorative-buttons__item--t5 {
   left: 390px;
   top: 55px;
   transform: rotate(20deg);
 }
-.t6 {
+.decorative-buttons__item--t6 {
   left: 530px;
   top: 55px;
-  transform: rotate(142.06deg);
+  transform: rotate(142deg);
 }
-.t7 {
+.decorative-buttons__item--t7 {
   left: 580px;
   top: 75px;
   transform: rotate(180deg);
 }
-.t8 {
+.decorative-buttons__item--t8 {
   left: 700px;
   top: 75px;
 }
-.t9 {
+.decorative-buttons__item--t9 {
   left: 790px;
   top: 50px;
   transform: rotate(35deg);
 }
-.t10 {
+.decorative-buttons__item--t10 {
   left: 900px;
   top: 75px;
   transform: rotate(180deg);
 }
-.t11 {
+.decorative-buttons__item--t11 {
   left: 1010px;
   top: 50px;
-  transform: rotate(148.92deg);
+  transform: rotate(149deg);
 }
-.t12 {
+.decorative-buttons__item--t12 {
   left: 1080px;
   top: 65px;
   transform: rotate(180deg);
