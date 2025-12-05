@@ -1,51 +1,56 @@
 .hero {
   min-height: 100vh;
-  background-color: #0d171d;
+  background-color: $color-background-text;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0 0 60px 60px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .hero__container {
-  margin-bottom: 65px;
 }
-
 .hero__middle {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 120px;
+}
+.hero__background {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.hero__background {
-  width: 335px;
-  height: 259px;
+.hero__blur {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #14182c 36.46%,
+    rgba(52, 56, 127, 0) 100%
+  );
+  filter: blur(94px);
+  border-radius: 200000px;
+  z-index: 1;
 }
 
 .hero__background-img {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  width: 91%;
   height: auto;
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+  margin: 0 auto;
 }
 
 .hero__title {
   width: 90%;
   height: auto;
   margin-top: -40px;
+  margin: 0 auto;
 }
 
 .hero__text {
@@ -53,7 +58,7 @@
   font-size: 14px;
   line-height: 1.29;
   text-align: center;
-  color: #fafafa;
+  color: $color-background-primary;
   max-width: 290px;
   margin-top: 20px;
   margin: auto;
@@ -97,9 +102,9 @@
     max-width: 740px;
   }
 
-  .hero__background {
-    width: 532px;
-    height: 411px;
+  .hero__background-img {
+    width: 91%;
+    height: auto;
   }
 
   .hero__middle {
@@ -120,11 +125,24 @@
     width: 32px;
     height: 32px;
   }
-}
+  .hero__title {
+    width: 60%;
+    height: auto;
 
+    margin: 0 auto;
+  }
+}
+.hero__button-secound {
+  display: none;
+}
 /* ---------- DESKTOP 1200px ---------- */
 
 @media (min-width: 1200px) {
+  .hero__button {
+    position: relative;
+    margin-left: 150px;
+    top: 570px;
+  }
   .container {
     max-width: 1200px;
   }
