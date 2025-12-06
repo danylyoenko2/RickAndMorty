@@ -106,3 +106,11 @@
     text-align: center;
   }
 }
+@media (min-width: 1200px) {
+  .footer__menu-item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 113%;
+    letter-spacing: 0.01em;
+  }
+}
