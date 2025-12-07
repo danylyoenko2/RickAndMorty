@@ -1,18 +1,15 @@
-.decorative_buttons {
+.decorative-buttons {
+  height: 150px;
   overflow: hidden;
-  height: 100%;
-  max-height: 150px;
 }
 
 .decorative-buttons__container {
   position: relative;
-  height: 100%;
   max-height: 150px;
   align-items: center;
-  overflow: hidden;
   display: flex;
-  white-space: nowrap;
   animation: scroll 10s linear infinite;
+  white-space: nowrap;
 }
 
 .decorative-buttons__item {
@@ -32,10 +29,30 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-370%);
   }
   100% {
     transform: translateX(120%);
+  }
+}
+@media (min-width: 720px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(-160%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+}
+@media (min-width: 1000px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
   }
 }
 
