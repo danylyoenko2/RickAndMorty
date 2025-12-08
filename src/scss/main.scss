@@ -2,7 +2,9 @@
 @import "./utils/variables";
 @import "./base/base";
 @import "./layout/grids";
-
+@import "./base/typhography";
+@import "./utils/mixin";
+@import "../scss/components/characterCards";
 @import "./components/decorative_buttons";
 @import "./components/scroll";
 @import "./components/footer";
