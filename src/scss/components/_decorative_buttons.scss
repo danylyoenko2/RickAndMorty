@@ -1,0 +1,132 @@
+.decorative-buttons {
+  height: 150px;
+  overflow: hidden;
+}
+
+.decorative-buttons__container {
+  position: relative;
+  max-height: 150px;
+  align-items: center;
+  display: flex;
+  animation: scroll 10s linear infinite;
+  white-space: nowrap;
+}
+
+.decorative-buttons__item {
+  position: absolute;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  background: $color-background-secondary;
+  border-radius: $radius-btn;
+
+  opacity: 1;
+  padding-top: 14px;
+  padding-right: 23px;
+  padding-bottom: 14px;
+  padding-left: 23px;
+  gap: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-370%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+@media (min-width: 720px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(-160%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+}
+@media (min-width: 1040px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+}
+
+.decorative-buttons__item--t3,
+.decorative-buttons__item--t5,
+.decorative-buttons__item--t8,
+.decorative-buttons__item--t10 {
+  background: $color-background-text;
+  color: $color-background-primary;
+}
+.decorative-buttons__item--light-green {
+  background: $color-background-decor;
+}
+.decorative-buttons__item--light-green-text {
+  color: $color-background-decor;
+}
+.decorative-buttons__item--green-text {
+  color: $color-background-secondary;
+}
+
+.decorative-buttons__item--t1 {
+  left: 100px;
+  top: 30px;
+}
+.decorative-buttons__item--t2 {
+  left: 190px;
+  top: 20px;
+  transform: rotate(31deg);
+}
+.decorative-buttons__item--t3 {
+  left: 50px;
+  top: 75px;
+}
+.decorative-buttons__item--t4 {
+  left: 300px;
+  top: 75px;
+}
+.decorative-buttons__item--t5 {
+  left: 390px;
+  top: 55px;
+  transform: rotate(20deg);
+}
+.decorative-buttons__item--t6 {
+  left: 530px;
+  top: 55px;
+  transform: rotate(142deg);
+}
+.decorative-buttons__item--t7 {
+  left: 580px;
+  top: 75px;
+  transform: rotate(180deg);
+}
+.decorative-buttons__item--t8 {
+  left: 700px;
+  top: 75px;
+}
+.decorative-buttons__item--t9 {
+  left: 790px;
+  top: 50px;
+  transform: rotate(35deg);
+}
+.decorative-buttons__item--t10 {
+  left: 900px;
+  top: 75px;
+  transform: rotate(180deg);
+}
+.decorative-buttons__item--t11 {
+  left: 1010px;
+  top: 50px;
+  transform: rotate(149deg);
+}
+.decorative-buttons__item--t12 {
+  left: 1080px;
+  top: 65px;
+  transform: rotate(180deg);
+}

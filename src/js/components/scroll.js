@@ -9,5 +9,4 @@ export const Scroll = async () => {
   const data = await RickAndMortyService.getAllCharacters({ page: 2 });
   const scrollHTML = scrollTemp(data.results);
   scrollContainer.innerHTML = scrollHTML;
-  console.log(scrollHTML);
 };
