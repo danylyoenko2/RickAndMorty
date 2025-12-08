@@ -5,6 +5,7 @@
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header__nav {
   display: flex;
@@ -18,4 +19,16 @@
 .header__search {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  width: 195px;
+  height: 75px;
+
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: block;
 }
