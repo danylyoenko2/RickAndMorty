@@ -1,5 +1,8 @@
 @import "./base/reset";
+@import "./utils/variables";
 @import "./base/base";
 @import "./layout/grids";
-@import "./utils/variables";
+
+@import "./components/decorative_buttons";
+@import "./components/scroll";
 @import "./components/footer";
