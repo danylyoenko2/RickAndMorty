@@ -1,0 +1,26 @@
+.container__loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 90px;
+}
+
+.load__more {
+  border-radius: 1000px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 133%;
+  color: $color-background-text;
+  background-color: $color-background-secondary;
+}
+@media (min-width: 768px) {
+  .container__loadmore {
+    padding-bottom: 140px;
+  }
+  .load__more {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
