@@ -20,6 +20,25 @@
   display: flex;
   align-items: center;
 }
+.search__input {
+  display: inline-block;
+  max-width: 50px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  color: #fafafa;
+  background-color: #0d171d;
+
+  &::placeholder {
+    color: #fafafa;
+  }
+}
+.header__search {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid #fafafa4d;
+}
 
 .logo {
   width: 195px;
@@ -31,4 +50,14 @@
   background-position: center;
 
   display: block;
+}
+
+@media (min-width: 768px) {
+  .search__input {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .header__search {
+    padding: 12px 24px;
+  }
 }

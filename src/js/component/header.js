@@ -13,4 +13,4 @@ export const createHeaderMarkUp = (showBtns) => {
 
   headerContainer.innerHTML = headerHtml;
 };
-createHeaderMarkUp(false);
+createHeaderMarkUp(true);
