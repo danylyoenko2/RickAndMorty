@@ -1,5 +1,5 @@
 .footer {
-  background-color: $color-background-text;
+  background-color: $color-background-primary;
 }
 
 .footer__info {
@@ -25,7 +25,7 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: 0.01em;
-  color: $color-background-primary;
+  color: $color-text-primary;
 }
 
 .footer__socials {
@@ -39,26 +39,33 @@
 }
 
 .footer__social-item {
-  border: 1px solid $color-border;
-  border-radius: 8px;
+  border: 1px solid rgba($color-text-primary, 0.2);
+  border-radius: 12px;
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+  &:hover {
+    scale: 1.05;
+    transition: 0.3s;
+  }
 }
-
 .footer__social-icon {
-  opacity: 1;
+  width: 20px;
+  height: 20px;
+  fill: $color-text-primary;
 }
 
 .footer__legal {
   font-size: 12px;
   line-height: 1.17;
   text-align: center;
-  color: $color-footer-penis;
+  color: $color-text-primary;
   margin-top: 80px;
   padding-bottom: 16px;
+  opacity: 0.4;
 }
 
 @media (min-width: 768px) {
@@ -100,6 +107,7 @@
 
   .footer__social-icon {
     height: 24px;
+    width: 24px;
   }
 
   .footer__legal {
