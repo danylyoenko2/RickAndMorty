@@ -11,6 +11,15 @@
   &__item {
     max-width: 335px;
   }
+  &__more {
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: $radius-btn;
+    color: $color-background-text;
+    background-color: $color-background-secondary;
+  }
 }
 
 .character {
@@ -90,6 +99,10 @@
 
     &__item {
       flex-basis: calc((100% - 64px) / 2);
+    }
+    &__more {
+      padding: 12px 24px;
+      font-size: 14px;
     }
   }
 }
