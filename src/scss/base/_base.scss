@@ -4,3 +4,18 @@ img {
   height: auto;
   display: block;
 }
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 230px;
+  padding: 20px;
+  &__action {
+    cursor: pointer;
+    transition: 0.2s ease;
+    border: 2px solid $color-text-primary;
+    border-radius: 100px;
+    padding: 16px 24px;
+  }
+}

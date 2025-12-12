@@ -1,0 +1,137 @@
+.characters {
+  padding-block: 40px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__item {
+    max-width: 335px;
+  }
+  &__more {
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: $radius-btn;
+    color: $color-background-text;
+    background-color: $color-background-secondary;
+  }
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+  border-radius: $radius-card-image;
+  transition: scale 0.3s ease;
+  position: relative;
+
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:hover {
+    &::before {
+      animation: glow 2s ease-in-out infinite;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 103%;
+    height: 102%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 22px;
+  }
+
+  &__photo {
+    border: 2px solid $color-background-secondary;
+    aspect-ratio: 1;
+    border-radius: $radius-card-image;
+    overflow: hidden;
+    display: flex;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 13px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  &__item {
+    &--name {
+      @include color($color-text-primary, 0.5);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .characters {
+    &__list {
+      column-gap: 32px;
+      row-gap: 64px;
+    }
+
+    &__item {
+      flex-basis: calc((100% - 64px) / 2);
+    }
+    &__more {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .characters {
+    &__list {
+      column-gap: 24px;
+      row-gap: 64px;
+    }
+
+    &__item {
+      flex-basis: calc((100% - 72px) / 4);
+      max-width: 280px;
+    }
+  }
+  .character {
+    &__photo {
+      aspect-ratio: 0.88;
+    }
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px $color-background-decor;
+  }
+  50% {
+    box-shadow: 0 0 20px $color-background-secondary;
+  }
+}
