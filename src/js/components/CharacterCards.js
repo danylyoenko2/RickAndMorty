@@ -5,7 +5,7 @@ import charCardsSource from "bundle-text:../../template/characterCard.hbs";
 const charCardsTemp = Handlebars.compile(charCardsSource);
 const charCardsList = document.querySelector("[data-character-list]");
 
-let page = 0;
+let page = 1;
 let maxPage = 1;
 
 export const CharacterCards = async () => {
@@ -15,6 +15,7 @@ export const CharacterCards = async () => {
       page: page,
     });
     maxPage = info.pages;
+    console.log(page, maxPage);
 
     const charCardsHTML = charCardsTemp(results);
     charCardsList.insertAdjacentHTML("beforeend", charCardsHTML);
