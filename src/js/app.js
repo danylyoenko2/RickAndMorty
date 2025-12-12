@@ -3,7 +3,11 @@ import { Scroll } from "./components/scroll";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
-LoadMoreBtn.addEventListener("click", CharacterCards());
-
-CharacterCards();
-Scroll();
+document.addEventListener("DOMContentLoaded", () => {
+  if (location.pathname === "/") {
+    Scroll();
+  } else {
+    CharacterCards();
+    LoadMoreBtn.addEventListener("click", CharacterCards);
+  }
+});
