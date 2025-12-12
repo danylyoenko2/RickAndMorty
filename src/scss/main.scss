@@ -4,6 +4,9 @@
 @import "./layout/grids";
 @import "./base/typhography";
 @import "./utils/mixin";
+
+@import "./components/button";
+@import "./components/header";
 @import "../scss/components/characterCards";
 @import "./components/decorative_buttons";
 @import "./components/scroll";
