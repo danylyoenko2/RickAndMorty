@@ -1,16 +1,41 @@
 import { CharacterCards } from "./components/CharacterCards";
 import { Scroll } from "./components/scroll";
 import { createHeaderMarkUp } from "./components/header";
+import { Filter } from "./components/СustomSelect";
+import "./logic/filterLogic";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
+localStorage.setItem(
+  "filtersData",
+  JSON.stringify({
+    page: 1,
+    totalPages: 1,
+    status: "",
+    species: "",
+    type: "",
+    gender: "",
+  })
+);
+
+const handleLoadMore = () => CharacterCards();
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (location.pathname === "/") {
+  if (location.pathname === "/" || location.pathname === "/RickAndMorty/") {
     Scroll();
     createHeaderMarkUp();
-  } else {
+  } else if (
+    location.pathname === "/characters.html" ||
+    location.pathname === "/RickAndMorty/characters.html"
+  ) {
     createHeaderMarkUp(false);
-    CharacterCards();
-    LoadMoreBtn.addEventListener("click", CharacterCards);
+    CharacterCards({ page: 1 });
+    Filter();
+    LoadMoreBtn.addEventListener("click", handleLoadMore);
+  } else if (
+    location.pathname === "/episodes.html" ||
+    location.pathname === "/RickAndMorty/episodes.html"
+  ) {
+    createHeaderMarkUp(false);
   }
 });
