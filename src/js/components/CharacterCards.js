@@ -5,20 +5,29 @@ import charCardsSource from "bundle-text:../../template/characterCard.hbs";
 const charCardsTemp = Handlebars.compile(charCardsSource);
 const charCardsList = document.querySelector("[data-character-list]");
 
-let page = 1;
-let maxPage = 1;
+export const CharacterCards = async (refreshContainer = false) => {
+  const filters = JSON.parse(localStorage.getItem("filtersData"));
 
-export const CharacterCards = async () => {
+  let currPage = filters.page;
+  let totalPages = filters.totalPages;
+
+  if (refreshContainer) charCardsList.innerHTML = "";
+
   if (location.pathname === "/") return;
-  if (maxPage >= page) {
-    const { info, results } = await RickAndMortyService.getAllCharacters({
-      page: page,
-    });
-    maxPage = info.pages;
-    console.log(page, maxPage);
+
+  if (totalPages >= currPage) {
+    const { info, results } = await RickAndMortyService.getAllCharacters(
+      filters
+    );
+
+    filters.totalPages = info.pages;
 
     const charCardsHTML = charCardsTemp(results);
     charCardsList.insertAdjacentHTML("beforeend", charCardsHTML);
-    page++;
+
+    currPage++;
+    filters.page = currPage;
+
+    localStorage.setItem("filtersData", JSON.stringify(filters));
   }
 };
