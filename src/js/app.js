@@ -32,5 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     CharacterCards({ page: 1 });
     Filter();
     LoadMoreBtn.addEventListener("click", handleLoadMore);
+  } else if (
+    location.pathname === "/episodes.html" ||
+    location.pathname === "/RickAndMorty/episodes.html"
+  ) {
+    createHeaderMarkUp(false);
   }
 });
