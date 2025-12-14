@@ -1,18 +1,33 @@
-.searchError {
+.search-error {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 23px;
+  gap: 8px;
+  &__photo {
+    flex-grow: 1;
+    inline-size: 100%;
+    max-width: 290px;
+    aspect-ratio: 1.08;
+    background-image: url(../images/searchError.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: $color-text-primary;
+  }
 }
-.searchError__img {
-  max-width: 388px;
-  max-height: 358px;
-}
-.searchError__text {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0.02em;
-  color: $color-text-primary;
+
+@media (min-width: 768px) {
+  .search-error {
+    &__photo {
+      max-width: 390px;
+    }
+    &__text {
+      font-size: 24px;
+    }
+  }
 }

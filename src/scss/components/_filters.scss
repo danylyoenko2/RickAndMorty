@@ -91,6 +91,13 @@
     }
   }
 
+  &__text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 25px;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;

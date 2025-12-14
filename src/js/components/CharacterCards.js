@@ -1,6 +1,7 @@
 import { RickAndMortyService } from "../service/RickAndMortyService";
 import Handlebars from "handlebars";
 import charCardsSource from "bundle-text:../../template/characterCard.hbs";
+import { SearchError } from "./searchError";
 
 const charCardsTemp = Handlebars.compile(charCardsSource);
 const charCardsList = document.querySelector("[data-character-list]");
@@ -16,18 +17,22 @@ export const CharacterCards = async (refreshContainer = false) => {
   if (location.pathname === "/") return;
 
   if (totalPages >= currPage) {
-    const { info, results } = await RickAndMortyService.getAllCharacters(
-      filters
-    );
+    try {
+      const { info, results } = await RickAndMortyService.getAllCharacters(
+        filters
+      );
 
-    filters.totalPages = info.pages;
+      filters.totalPages = info.pages;
 
-    const charCardsHTML = charCardsTemp(results);
-    charCardsList.insertAdjacentHTML("beforeend", charCardsHTML);
+      const charCardsHTML = charCardsTemp(results);
+      charCardsList.insertAdjacentHTML("beforeend", charCardsHTML);
 
-    currPage++;
-    filters.page = currPage;
+      currPage++;
+      filters.page = currPage;
 
-    localStorage.setItem("filtersData", JSON.stringify(filters));
+      localStorage.setItem("filtersData", JSON.stringify(filters));
+    } catch (error) {
+      SearchError(charCardsList);
+    }
   }
 };
