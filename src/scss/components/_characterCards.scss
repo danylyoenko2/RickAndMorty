@@ -1,5 +1,12 @@
 .characters {
   padding-block: 40px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +17,15 @@
 
   &__item {
     max-width: 335px;
+  }
+  &__more {
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: $radius-btn;
+    color: $color-background-text;
+    background-color: $color-background-secondary;
   }
 }
 
@@ -83,6 +99,10 @@
 
 @media (min-width: 768px) {
   .characters {
+    padding-block: 64px 128px;
+    &__container {
+      gap: 64px;
+    }
     &__list {
       column-gap: 32px;
       row-gap: 64px;
@@ -90,6 +110,10 @@
 
     &__item {
       flex-basis: calc((100% - 64px) / 2);
+    }
+    &__more {
+      padding: 12px 24px;
+      font-size: 14px;
     }
   }
 }

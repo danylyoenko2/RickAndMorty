@@ -1,7 +1,7 @@
-<footer class="footer">
+<footer class="footer footer--black">
   <div class="container">
     <div class="footer__info">
-      <a href="./index.html" class="footer__logo-link">
+      <a href="/" class="footer__logo-link">
         <img
           src="./images/footer-logo2.svg"
           alt="Rick and Morty footer logo"
@@ -13,44 +13,48 @@
         <div class="footer__menu">
           <ul class="footer__menu-list">
             <li>
-              <a class="footer__menu-item" href="pages/characters.html"
+              <a class="footer__menu-item footer__menu-item--white" href="./characters.html"
                 >Characters</a
               >
             </li>
-            <li><a class="footer__menu-item" href="#">Episodes</a></li>
+            <li>
+              <a class="footer__menu-item footer__menu-item--white" href="#"
+                >Episodes</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer__socials">
           <ul class="footer__social-list">
-            <li class="footer__social-item">
-              <a href="https://www.facebook.com"
-                ><img
-                  class="footer__social-icon"
-                  src="./images/facebook.svg"
-                  alt=""
-              /></a>
+            <li class="footer__social-item footer__social-item--black">
+              <a href="https://www.facebook.com" class="footer__social-link">
+                <svg class="footer__social-icon">
+                  <use href="./images/symbol-defs.svg#icon-facebook">
+                  </svg>
+              </a>
+               
             </li>
-            <li class="footer__social-item">
-              <a href="https://x.com"
-                ><img
-                  class="footer__social-icon"
-                  src="./images/twitter.svg"
-                  alt=""
-              /></a>
+            <li class="footer__social-item footer__social-item--black">
+              <a href="https://x.com">
+                <svg class="footer__social-icon">
+              <use href="./images/symbol-defs.svg#icon-twitter">
+              </svg>
+              </a>
             </li>
-            <li class="footer__social-item">
-              <a href="https://www.instagram.com"
-                ><img
-                  class="footer__social-icon"
-                  src="./images/instagram.svg"
-                  alt=""
-              /></a>
+            <li class="footer__social-item footer__social-item--black">
+              <a href="https://www.instagram.com">
+                <svg class="footer__social-icon">
+                  <use href="./images/symbol-defs.svg#icon-instagram-2">
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <p class="footer__legal">Privacy Policy Public Offering Agreement</p>
+    <p class="footer__legal footer__legal--gr">
+      Privacy Policy Public Offering Agreement
+    </p>
   </div>
 </footer>
