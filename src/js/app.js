@@ -21,10 +21,13 @@ localStorage.setItem(
 const handleLoadMore = () => CharacterCards();
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (location.pathname === "/") {
+  if (location.pathname === "/" || location.pathname === "/RickAndMorty/") {
     Scroll();
     createHeaderMarkUp();
-  } else {
+  } else if (
+    location.pathname === "/pages/characters.html" ||
+    location.pathname === "/RickAndMorty/pages/characters.html"
+  ) {
     createHeaderMarkUp(false);
     CharacterCards({ page: 1 });
     Filter();
