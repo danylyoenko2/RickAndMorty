@@ -1,3 +1,4 @@
+@import "./utils/variables";
 @import "./base/reset";
 @import "./utils/variables";
 @import "./base/base";
@@ -7,6 +8,7 @@
 
 @import "./components/button";
 @import "./components/header";
+@import "./components/filters";
 @import "../scss/components/characterCards";
 @import "./components/decorative_buttons";
 @import "./components/scroll";
