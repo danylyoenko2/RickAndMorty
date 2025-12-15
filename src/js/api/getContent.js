@@ -9,5 +9,6 @@ export const getContent = async (endpoint, params = {}) => {
     return processResponse(res);
   } catch (error) {
     console.log(error);
+    throw "error";
   }
 };

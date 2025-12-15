@@ -1,0 +1,31 @@
+{{#each this}}
+  <li class="characters__item">
+    <article class="character" data-character-id="{{id}}">
+      <div class="character__photo"><img
+          src="{{image}}"
+          alt="{{name}}"
+          class="character__img"
+        />
+      </div>
+      <div class="character__info">
+        <h2 class="character__name">
+          {{name}}
+        </h2>
+        <ul class="character__list">
+          <li class="character__item">
+            <span class="character__item--name">
+              Origin:
+            </span>
+            {{origin.name}}
+          </li>
+          <li class="character__item">
+            <span class="character__item--name">
+              Location:
+            </span>
+            {{location.name}}
+          </li>
+        </ul>
+      </div>
+    </article>
+  </li>
+{{/each}}
