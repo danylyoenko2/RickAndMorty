@@ -1,3 +1,4 @@
+@import "./utils/variables";
 @import "./base/reset";
 @import "./utils/variables";
 @import "./base/base";
@@ -7,8 +8,14 @@
 
 @import "./components/button";
 @import "./components/header";
-@import "../scss/components/characterCards";
+@import "./components/hero";
+@import "./components/main-characters";
+@import "./components/filters";
+@import "./components/characterCards";
 @import "./components/decorative_buttons";
 @import "./components/scroll";
+@import "./components/characters_hero";
+@import "./components/episods_hero";
+@import "./components/searchError";
 @import "./components/footer";
 @import "./components/customSelect";

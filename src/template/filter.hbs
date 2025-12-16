@@ -1,0 +1,42 @@
+<label class="filter-form__label filter-form__label--input filter">
+  Name
+  <div class="filter-form__wrapper filter-form__wrapper--input">
+    <input
+      class="filter-form__input"
+      type="text"
+      name="nameFilter"
+      placeholder="Enter name"
+    />
+    <button type="submit" class="filter-form__btn"></button>
+  </div>
+</label>
+
+{{#each this}}
+  <div class="filter-form__wrapper filter-form__wrapper--{{this.name}}">
+    <label class="filter-form__label">{{this.label}}
+      <input
+        class="filter-form__input"
+        type="text"
+        name="{{this.name}}Filter"
+        value=""
+        readonly
+        hidden
+      /></label>
+    <div class="filter-form__select" data-select data-name="{{this.name}}">
+
+      <div class="filter-form__trigger" data-select-trigger>
+        <span class="filter-form__text" data-select-text>
+          {{this.label}}</span>
+        <span class="filter-form__arrow">
+
+        </span>
+      </div>
+
+      <ul class="filter-form__list filter-form__list--{{this.name}}">
+        {{#each this.filterTypes}}
+          <li class="filter-form__option" data-value="{{this}}">{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+{{/each}}
