@@ -1,0 +1,119 @@
+.filter-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.select {
+  position: relative;
+}
+
+.select__trigger {
+  width: 190px;
+  height: 50px;
+  background: $color-background-primary;
+  border: 1px solid $color-text-primary;
+  border-radius: 22px;
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.select__options {
+  position: absolute;
+  border-radius: 16px;
+  width: 190px;
+  height: 215px;
+  overflow-y: auto;
+  background: color-background-primary;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+}
+
+.select.is-open .select__options {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.select__option {
+  padding: 12px 32px;
+  cursor: pointer;
+}
+
+.select__option:hover {
+  background: #f0f0f0;
+}
+
+.select__option.selected {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $color-background-decor-second;
+}
+
+.name-input input {
+  width: 233px;
+  height: 50px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  border-radius: 100px;
+  border: 1.5px solid #111;
+  background: $color-background-decor;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.13;
+
+  outline: none;
+}
+
+.name-input input::placeholder {
+  color: $color-text-primary;
+}
+
+.name-input__icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.filter__label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $color-text-primary;
+  margin-bottom: 8px;
+}
+.select__label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $color-text-primary;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .name-input input,
+  .select__trigger,
+  .select__options {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
+  }
+}
