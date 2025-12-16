@@ -3,6 +3,8 @@ import { Scroll } from "./components/scroll";
 import { createHeaderMarkUp } from "./components/header";
 import { Filter } from "./components/СustomSelect";
 import "./logic/filterLogic";
+import { RickAndMortyService } from "./service/RickAndMortyService";
+import { FilterEpisodes } from "./components/filterEpisodes";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
@@ -37,5 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     location.pathname === "/RickAndMorty/episodes.html"
   ) {
     createHeaderMarkUp(false);
+    FilterEpisodes();
   }
 });

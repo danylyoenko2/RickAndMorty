@@ -45,3 +45,26 @@ export const filterData = [
     filterTypes: ["None", "All", "Male", "Female", "Unknown", "Genderless"],
   },
 ];
+export const filterDataEpisodes = [
+  {
+    season: 1,
+    series: [],
+  },
+  {
+    season: 2,
+    series: [],
+  },
+  {
+    season: 3,
+    series: [],
+  },
+  {
+    season: 4,
+    series: [],
+  },
+  {
+    season: 5,
+    series: [],
+  },
+];
+filterData.js;
