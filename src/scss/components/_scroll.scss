@@ -1,4 +1,6 @@
 .slider__container {
+  display: flex;
+  flex-direction: column;
   inline-size: 100%;
   max-width: 1960px;
   padding: 24px 0px 80px;
