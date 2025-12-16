@@ -1,24 +1,32 @@
-<label class="filter-episodes__label">
+<label
+  class="filter-form__label filter-form__label--input filter-episodes__label filter"
+>
   Name
-  <input
-    class="filter-episodes__input"
-    type="text"
-    name="nameFilter"
-    placeholder="Enter name"
-  />
-  <span class="filter-episodes__icon"></span>
+  <div class="filter-form__wrapper filter-form__wrapper--input">
+    <input
+      class="filter-form__input filter-episodes__input"
+      type="text"
+      name="nameFilter"
+      placeholder="Enter name"
+    />
+    <button
+      type="submit"
+      class="filter-form__btn filter-episodes__btn"
+    ></button>
+  </div>
 </label>
 <div class="filter-form__wrapper filter-form__wrapper">
   <label class="filter-form__label">Episode code
 
     <input
       class="filter-form__input"
-      type="text"
+      type="hidden"
       name="episodesFilter"
-      value=""
-      readonly
+      {{! value="" }}
+      {{! readonly }}
       hidden
-    /></label>
+    />
+  </label>
   <div class="filter-form__select" data-select data-name="episodes">
 
     <div class="filter-form__trigger" data-select-trigger>

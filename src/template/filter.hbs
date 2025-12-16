@@ -16,12 +16,13 @@
     <label class="filter-form__label">{{this.label}}
       <input
         class="filter-form__input"
-        type="text"
+        type="hidden"
         name="{{this.name}}Filter"
-        value=""
+        {{! data-value="" }}
         readonly
         hidden
-      /></label>
+      />
+    </label>
     <div class="filter-form__select" data-select data-name="{{this.name}}">
 
       <div class="filter-form__trigger" data-select-trigger>
