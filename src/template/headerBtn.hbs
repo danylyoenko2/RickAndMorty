@@ -1,20 +1,43 @@
 <nav class="header__nav">
   <ul class="header__nav-list">
     <li class="header__nav-item">
-      <a
-        href="../pages/characters.html"
-        class="btn btn--active"
-      >Characters</a></li>
-    <li class="header__nav-item"> <a href="#" class="btn"> Episodes</a></li>
+      <a href="./characters.html" class="btn btn--active">Characters</a></li>
+    <li class="header__nav-item">
+      <a href="./episodes.html" class="btn"> Episodes</a></li>
   </ul>
-</nav>
-<label class="header__search btn">
-  <input
-    type="text"
-    class="search__input"
-    data-header-search
-    name="headerSearch"
-    placeholder="Search"
-  />
 
-</label>
+  <button class="btn-open-search" data-open-search>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon"
+      viewBox="0 0 24 24"
+      width="16"
+      height="16"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    Search</button>
+
+</nav>
+<div class="side-menu" data-side-menu>
+  <div class="side-menu__header">
+    <h2 class="side-menu__title">Search Characters</h2>
+    <button class="side-menu__close-btn" data-close-search>&times;</button>
+  </div>
+  <div class="side-menu__body">
+    <input
+      type="text"
+      class="side-menu__input"
+      data-header-search
+      placeholder="Type character name..."
+    />
+    <div class="side-menu__results" data-search-result></div>
+  </div>
+</div>
+<div class="backdrop" data-backdrop></div>

@@ -8,9 +8,24 @@
   align-items: center;
 }
 .header__nav {
+  padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+@media (min-width: 720px) {
+  .header__nav {
+    padding: 24px;
+  }
+}
+@media (min-width: 1040px) {
+  .header__nav {
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+}
+
 .header__nav-list {
   display: flex;
   gap: 1px;
@@ -58,7 +73,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 720px) {
   .search__input {
     max-width: 50px;
     font-size: 14px;
