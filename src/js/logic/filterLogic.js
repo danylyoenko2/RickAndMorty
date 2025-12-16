@@ -11,7 +11,7 @@ const procValue = (value) => {
   return value;
 };
 
-const handleChange = (e) => {
+export const handleChange = (e) => {
   e.preventDefault();
   if (e.key !== "Enter") return;
   const updatedFilterData = {
@@ -29,5 +29,3 @@ const handleChange = (e) => {
   localStorage.setItem("filtersData", JSON.stringify(filtersData));
   CharacterCards(e, true);
 };
-
-document.addEventListener("keypress", handleChange);

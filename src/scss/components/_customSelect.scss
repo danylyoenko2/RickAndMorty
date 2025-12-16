@@ -1,5 +1,7 @@
 .filter-episodes {
   display: flex;
+  align-items: center;
+
   gap: 16px;
 
   justify-content: center;
@@ -9,105 +11,24 @@
 
 .filter-episodes__label {
   display: flex;
+  gap: 8px;
   flex-direction: column;
-  font-weight: 400;
-  font-size: 14px;
   line-height: 1.29;
   color: $color-text-primary;
   position: relative;
-}
-
-.filter-episodes__input {
-  width: 233px;
-  height: 50px;
-  padding: 16px 24px;
-  border-radius: 100px;
-  border: 1.5px solid #111;
-  background: $color-background-decor;
-  font-size: 16px;
-  outline: none;
 }
 
 .filter-episodes__input::placeholder {
   color: $color-text-primary;
 }
 
-.filter-episodes__icon {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(6px);
-}
-
-.filter-form__wrapper {
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-}
-
-.filter-form__label {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.29;
-  color: $color-text-primary;
-  margin-bottom: 8px;
-}
-
-.filter-form__select {
-  position: relative;
-}
-
-.filter-form__trigger {
-  width: 190px;
-  height: 50px;
-  background: $color-background-primary;
-  border: 1px solid $color-text-primary;
-  border-radius: 22px;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.filter-form__list {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  width: 190px;
-  max-height: 215px;
-  overflow-y: auto;
-  background: $color-background-primary;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.2s ease;
-  padding: 12px 0;
-  z-index: 10;
-}
-
-.filter-form__select.is-open .filter-form__list {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.filter-form__option {
-  padding: 12px 32px;
-  cursor: pointer;
-}
-
-.filter-form__option:hover {
-  background: #f0f0f0;
-}
-
-.filter-form__option.selected {
-  font-weight: 600;
-  font-size: 14px;
-  color: $color-background-decor-second;
-}
-.filter-episodes__label {
-  gap: 16px;
+.filter-episodes__btn {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/search.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
@@ -116,13 +37,7 @@
     align-items: stretch;
   }
 
-  .filter-episodes__input,
-  .filter-form__trigger,
-  .filter-form__list {
-    width: 100%;
-  }
-
-  .filter-form__select {
-    width: 100%;
+  .filter-episodes__input {
+    inline-size: 100%;
   }
 }
