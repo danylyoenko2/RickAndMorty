@@ -5,6 +5,7 @@ import { Filter } from "./components/СustomSelect";
 import "./logic/filterLogic";
 import { RickAndMortyService } from "./service/RickAndMortyService";
 import { FilterEpisodes } from "./components/filterEpisodes";
+import "./components/mainCgharactersChange";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 

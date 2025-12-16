@@ -60,6 +60,13 @@
   line-height: 1.29;
 }
 
+.main-character {
+  cursor: pointer;
+}
+.main-character.active .main-character__name {
+  color: $color-background-secondary;
+}
+
 //768
 @media (min-width: 768px) {
   .main-characters {
