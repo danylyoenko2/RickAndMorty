@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     location.pathname === "/" ||
     location.pathname === "/RickAndMorty/" ||
-    location.pathname === "/index.html"
+    location.pathname === "/index.html"||
+     location.pathname === "/RickAndMorty/index.html"
   ) {
     Scroll();
     createHeaderMarkUp();
