@@ -5,6 +5,17 @@ import { Filter } from "./components/СustomSelect";
 import { handleChange } from "./logic/filterLogic";
 import { RickAndMortyService } from "./service/RickAndMortyService";
 import { FilterEpisodes } from "./components/filterEpisodes";
+import Handlebars from "handlebars";
+import headerHbs from "bundle-text:../template/headerBtn.hbs";
+import { initSearch } from "./components/search";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const headerContainer = document.querySelector("[data-header]");
+
+  headerContainer.innerHTML = Handlebars.compile(headerHbs)({});
+
+  initSearch();
+});
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
@@ -26,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     location.pathname === "/" ||
     location.pathname === "/RickAndMorty/" ||
-    location.pathname === "/index.html"||
-     location.pathname === "/RickAndMorty/index.html"
+    location.pathname === "/index.html" ||
+    location.pathname === "/RickAndMorty/index.html"
   ) {
     Scroll();
     createHeaderMarkUp();
