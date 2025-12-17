@@ -5,6 +5,7 @@ import { Filter } from "./components/СustomSelect";
 import { handleChange } from "./logic/filterLogic";
 import { RickAndMortyService } from "./service/RickAndMortyService";
 import { FilterEpisodes } from "./components/filterEpisodes";
+import { EpisodCards } from "./components/episodeRender";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     location.pathname === "/" ||
     location.pathname === "/RickAndMorty/" ||
-    location.pathname === "/index.html"||
-     location.pathname === "/RickAndMorty/index.html"
+    location.pathname === "/index.html" ||
+    location.pathname === "/RickAndMorty/index.html"
   ) {
     Scroll();
     createHeaderMarkUp();
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
     createHeaderMarkUp(false);
     FilterEpisodes();
+    EpisodCards();
     document.addEventListener("keypress", handleChange);
   }
 });
