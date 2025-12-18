@@ -208,7 +208,7 @@ body.no-scroll {
 
       scrollbar-width: thin;
       scrollbar-color: $accent-color transparent;
-
+      color: red;
       &::-webkit-scrollbar {
         width: 6px;
       }
