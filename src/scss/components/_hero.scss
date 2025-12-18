@@ -8,6 +8,9 @@
   overflow: hidden;
   position: relative;
 }
+.hero-radius {
+  border-radius: 0 0 60px 60px;
+}
 
 .hero__middle {
   display: flex;
@@ -96,8 +99,12 @@
 /* ---------- TABLET 768px ---------- */
 
 @media (min-width: 768px) {
+  .hero-radius {
+    border-radius: 0 0 100px 100px;
+  }
   .hero__container {
     max-width: 740px;
+    padding-bottom: 65px;
   }
 
   .hero__background-img {

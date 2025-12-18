@@ -6,6 +6,7 @@ import { handleChange } from "./logic/filterLogic";
 import { RickAndMortyService } from "./service/RickAndMortyService";
 import { FilterEpisodes } from "./components/filterEpisodes";
 import { EpisodCards } from "./components/episodeRender";
+import "./components/mainCgharactersChange";
 
 const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
 
