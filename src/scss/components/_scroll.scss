@@ -1,16 +1,18 @@
 .slider__container {
   inline-size: 100%;
   max-width: 1960px;
-  padding: 24px 0px 80px;
+  padding: 80px 0px 80px;
   background: $color-background-text;
   border-radius: 50px;
+  overflow: hidden;
 }
 
 .slider__title {
   max-width: 306px;
-  padding: 20px 0 0 50px;
+  padding: 0 0 0 20px;
   font-size: 28px;
   margin-bottom: 34px;
+  // margin-top: 80px;
   color: $color-background-primary;
 }
 
@@ -23,15 +25,18 @@
 
 .episodes__scroll {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
   padding-bottom: 8px;
   margin-bottom: 20px;
-  scrollbar-width: none;
+  scrollbar-width: none;  
+  -webkit-overflow-scrolling: touch; 
 }
-
+.episodes__scroll::-webkit-scrollbar {
+  display: none;
+}
 .episode__card img {
-  width: 220px;
+  width: auto;
   height: 220px;
   object-fit: cover;
   border-radius: 18px;
@@ -48,16 +53,8 @@
   border-radius: 1000px;
   cursor: pointer;
 }
-
-.episodes__scroll {
-  display: flex;
-  overflow-x: scroll;
-  gap: 10px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
 .episode__card {
   flex: 0 0 auto;
-  width: 150px;
+  width: 220px;
 }
+// f'
