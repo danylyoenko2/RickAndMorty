@@ -9,11 +9,4 @@ export const Scroll = async () => {
   const data = await RickAndMortyService.getAllCharacters({ page: 2 });
   const scrollHTML = scrollTemp(data.results);
   scrollContainer.innerHTML = scrollHTML;
-
-  const episodesBtn = document.getElementById("episodesBtn");
-  if (episodesBtn) {
-    episodesBtn.addEventListener("click", () => {
-      window.location.href = "/episodes.html";
-    });
-  }
 };
