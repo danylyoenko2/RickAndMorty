@@ -3,37 +3,38 @@
   flex-direction: column;
   inline-size: 100%;
   max-width: 1960px;
-  padding: 24px 0px 80px;
+  padding: 80px 0px 80px;
   background: $color-background-text;
   border-radius: 50px;
+  overflow: hidden;
 }
 
 .slider__title {
-  max-width: 306px;
-  padding: 20px 0 0 50px;
+  padding: 0 0 0 20px;
   font-size: 28px;
   margin-bottom: 34px;
+  line-height: 1.14;
   color: $color-background-primary;
 }
 
 .slider__title .highlight {
   background: $color-background-secondary;
-  color: $color-background-text;
-  padding: 1px 6px;
-  border-radius: 12px;
+  color: $color-background-primary;
+  padding: 2px 10px;
+  border-radius: 30px;
 }
 
 .episodes__scroll {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
   padding-bottom: 8px;
   margin-bottom: 20px;
-  scrollbar-width: none;
+  scrollbar-width: none;  
+  -webkit-overflow-scrolling: touch; 
 }
-
 .episode__card img {
-  width: 220px;
+  width: auto;
   height: 220px;
   object-fit: cover;
   border-radius: 18px;
@@ -49,17 +50,68 @@
   padding: 10px 20px;
   border-radius: 1000px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
-
-.episodes__scroll {
-  display: flex;
-  overflow-x: scroll;
-  gap: 10px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+.episodes__btn:hover {
+   transform: scale(1.05); 
 }
-
 .episode__card {
   flex: 0 0 auto;
-  width: 150px;
+  width: 220px;
+}
+
+
+@media (min-width: 768px) {
+  .slider__container {
+  padding: 96px 0px 96px;
+  border-radius: 80px;
+  overflow: hidden;
+}
+
+.slider__title {
+  max-width: 610px;
+  font-size: 44px;
+  margin-bottom: 64px;
+  line-height: 1.09;
+  padding: 0 0 0 32px;
+}
+.episodes__scroll {
+  gap: 24px;
+  margin-bottom: 32px; 
+}
+.episode__card img {
+  width: auto;
+  height: 314px;
+  border-radius: 18px;
+  border: 3px solid $color-background-secondary;
+}
+
+.episodes__btn {
+  margin-right: 32px;
+  padding: 12px 24px;
+  border-radius: 1000px;
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: 600;
+}
+.episode__card {
+  width: 278px;
+}
+}
+
+@media (min-width: 1200px) {
+  .slider__title {
+    max-width: 680px;
+    padding: 0 0 0 128px;
+  }
+  .slider__container {
+  border-radius: 100px;
+  overflow: hidden;
+}
+.episodes__btn {
+  margin-right: 128px;
+  border-radius: 1000px;
+  width: 113px;
+  height: 42px;
+}
 }
