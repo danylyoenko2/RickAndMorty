@@ -1,0 +1,74 @@
+<div class='backdrop'>
+  <div class='modal' data-modal>
+    <button class='modal__close' data-modal-close></button>
+    <div class='modal__main'>
+      <div class='modal__photo'>
+        <img
+          src='{{this.characterData.image}}'
+          alt='{{this.characterData.name}}'
+        />
+      </div>
+      <ul class='modal__info modal__list--info'>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Status</span>
+          <p
+            class='modal__text modal__text--info'
+          >{{this.characterData.status}}</p>
+        </li>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Species</span>
+          <p class='modal__text modal__text--info'>
+            {{this.characterData.species}}</p>
+        </li>
+
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Gender</span>
+          <p class='modal__text modal__text--info'>
+            {{this.characterData.gender}}</p>
+        </li>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Origin</span>
+          <p class='modal__text modal__text--info'>
+            {{this.characterData.origin.name}}</p>
+        </li>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Location</span>
+          <p class='modal__text modal__text--info'>
+            {{this.characterData.location.name}}</p>
+        </li>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Episodes</span>
+          <p
+            class='modal__text modal__text--info'
+          >{{this.characterData.location.name}}</p>
+        </li>
+        <li class='modal__item'>
+          <span class='modal__subtitle'>Type</span>
+          <p class='modal__text modal__text--info'>
+            {{this.characterData.species}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class='modal__episodes'>
+      <h3 class='modal__title'>Episodes</h3>
+      <ul class='modal__list modal__list--episode'>
+        {{#each this.episodeData}}
+          <li class='modal__episode'>
+            <article class='episode-card'>
+              <h4 class='episode-card__title'>{{name}}</h4>
+              <ul class='episode-card__info'>
+                <li class='episode-card__item episode-card__item--season'>
+                  <span class='modal__subtitle'>Season</span>
+                  <p class='modal__text'>{{episode}}</p>
+                </li>
+                <li class='episode-card__item episode-card__item--date'>
+                  <span class='modal__subtitle'>Air date</span>
+                  <p class='modal__text'>{{air_date}}</p>
+                </li>
+              </ul>
+            </article>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div></div>

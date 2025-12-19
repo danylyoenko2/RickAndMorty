@@ -1,5 +1,5 @@
-import { getContent } from "../api/getContent";
-import { CHARACTERS_ENDPOINT, EPISODES_ENDPOINT } from "../http/http";
+import { getContent } from '../api/getContent';
+import { CHARACTERS_ENDPOINT, EPISODES_ENDPOINT } from '../http/http';
 
 export class RickAndMortyService {
   constructor(baseURL) {
@@ -19,6 +19,9 @@ export class RickAndMortyService {
   }
 
   static async getAllEpisodeById(id) {
+    return await getContent(`${EPISODES_ENDPOINT}/${id}`);
+  }
+  static async getEpisodeById(id) {
     return await getContent(`${EPISODES_ENDPOINT}/${id}`);
   }
 }

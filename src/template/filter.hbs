@@ -1,41 +1,40 @@
-<label class="filter-form__label filter-form__label--input filter">
+<label class='filter-form__label filter-form__label--input filter'>
   Name
-  <div class="filter-form__wrapper filter-form__wrapper--input">
+  <div class='filter-form__wrapper filter-form__wrapper--input'>
     <input
-      class="filter-form__input"
-      type="text"
-      name="nameFilter"
-      placeholder="Enter name"
+      class='filter-form__input'
+      type='text'
+      name='nameFilter'
+      placeholder='Enter name'
     />
-    <button type="submit" class="filter-form__btn"></button>
+    <button type='submit' class='filter-form__btn'></button>
   </div>
 </label>
 
 {{#each this}}
-  <div class="filter-form__wrapper filter-form__wrapper--{{this.name}}">
-    <label class="filter-form__label">{{this.label}}
+  <div class='filter-form__wrapper filter-form__wrapper--{{this.name}}'>
+    <label class='filter-form__label'>{{this.label}}
       <input
-        class="filter-form__input"
-        type="hidden"
-        name="{{this.name}}Filter"
-        {{! data-value="" }}
-        readonly
-        hidden
+        class='filter-form__input'
+        type='hidden'
+        name='{{this.name}}Filter'
+        value=''
       />
     </label>
-    <div class="filter-form__select" data-select data-name="{{this.name}}">
+    <div class='filter-form__select' data-select data-name='{{this.name}}'>
 
-      <div class="filter-form__trigger" data-select-trigger>
-        <span class="filter-form__text" data-select-text>
+      <div class='filter-form__trigger' data-select-trigger>
+        <span class='filter-form__text' data-select-text>
           {{this.label}}</span>
-        <span class="filter-form__arrow">
+        <span class='filter-form__arrow'>
 
         </span>
       </div>
 
-      <ul class="filter-form__list filter-form__list--{{this.name}}">
+      <ul class='filter-form__list filter-form__list--{{this.name}}'>
+
         {{#each this.filterTypes}}
-          <li class="filter-form__option" data-value="{{this}}">{{this}}</li>
+          <li class='filter-form__option' data-value='{{this}}'>{{this}}</li>
         {{/each}}
       </ul>
     </div>

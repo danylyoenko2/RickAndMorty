@@ -1,0 +1,190 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: all;
+  z-index: 999;
+  background-color: #00000069;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: $color-background-text;
+  padding: 40px 20px;
+  z-index: 1000;
+  position: fixed;
+  inset: 0;
+  color: $color-background-primary;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 14px;
+    right: 14px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    background-color: inherit;
+
+    &::before,
+    &::after {
+      content: '';
+      scale: 1;
+      position: absolute;
+      height: 2px;
+      width: calc(100% - 4px);
+      border-radius: $radius-card-image;
+      background-color: $color-background-decor-second;
+      rotate: -45deg;
+      transition: scale 0.3s ease;
+      animation: show 0.5s ease;
+    }
+
+    &::after {
+      rotate: 45deg;
+    }
+
+    &::active {
+      scale: 1.05;
+    }
+  }
+
+  &__photo {
+    overflow: hidden;
+    border: 2px solid $color-background-decor-second;
+    border-radius: $radius-card-image;
+  }
+
+  &__info {
+    padding: 20px 38px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px 8px;
+    border: 2px solid $color-background-decor-second;
+    border-radius: $radius-card-image;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__episodes {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 20px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    color: $color-border-hero;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.episode-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  border: 2px solid $color-background-decor-second;
+  border-radius: $radius-card-image;
+
+  &__title {
+    color: $color-background-decor-second;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60px;
+    white-space: nowrap;
+  }
+
+  &__info {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    position: relative;
+    border-radius: $radius-card-image;
+    flex-direction: row;
+    padding: 32px;
+    gap: 8px;
+    max-width: 700px;
+    max-height: 510px;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__text {
+      &--info {
+        font-size: 16px;
+      }
+    }
+    &__photo {
+      flex-grow: 1;
+      aspect-ratio: 1;
+      max-width: 280px;
+    }
+
+    &__main {
+      gap: 8px;
+    }
+
+    &__info {
+      max-width: 280px;
+      max-height: 180px;
+      overflow-y: scroll;
+    }
+    &__episodes {
+      flex-grow: 1;
+      gap: 16px;
+    }
+  }
+  .episode-card {
+    gap: 30px;
+    &__title {
+      max-width: 105px;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    scale: 0.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
