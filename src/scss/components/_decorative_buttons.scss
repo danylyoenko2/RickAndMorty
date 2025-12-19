@@ -1,11 +1,11 @@
 .decorative-buttons {
   height: 150px;
   overflow: hidden;
+  transform: translateY(-50px);
 }
 
 .decorative-buttons__container {
   position: relative;
-  max-height: 150px;
   align-items: center;
   display: flex;
   animation: scroll 20s linear infinite;
@@ -79,8 +79,8 @@
   top: 30px;
 }
 .decorative-buttons__item--t2 {
-  left: 190px;
-  top: 20px;
+  left: 175px;
+  top: 13px;
   transform: rotate(31deg);
 }
 .decorative-buttons__item--t3 {
@@ -127,6 +127,6 @@
 }
 .decorative-buttons__item--t12 {
   left: 1080px;
-  top: 65px;
+  top: 75px;
   transform: rotate(180deg);
 }
