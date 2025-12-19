@@ -1,6 +1,8 @@
 import Handlebars from "handlebars";
 import searchResultsHbs from "bundle-text:../../template/searchResults.hbs";
 import { RickAndMortyService } from "../service/RickAndMortyService";
+import Handlebars from "handlebars";
+import searchResultsHbs from "bundle-text:../../template/searchResults.hbs";
 
 export function initSearch() {
   const openBtn = document.querySelector("[data-open-search]");
@@ -41,39 +43,48 @@ export function initSearch() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
-
-  let timer;
   input.addEventListener("input", (e) => {
-    clearTimeout(timer);
     const query = e.target.value.trim();
+
     if (!query) {
       resultsContainer.innerHTML = "";
       return;
     }
-    timer = setTimeout(() => searchCharacters(query), 400);
+
+    searchCharacters(query);
   });
+
+  let lastQuery = "";
+
+  input.addEventListener("input", (e) => {
+    const query = e.target.value.trim();
+
+    if (query === lastQuery) return;
+    lastQuery = query;
+
+    if (!query) {
+      resultsContainer.innerHTML = "";
+      return;
+    }
+
+    searchCharacters(query);
+  });
+
+  const template = Handlebars.compile(searchResultsHbs);
 
   async function searchCharacters(query) {
     try {
       const data = await RickAndMortyService.getAllCharacters({ name: query });
       const results = data.results || [];
-      resultsContainer.innerHTML = results
-        .map(
-          (c) => `
-        <div class="character-card">
-          <img src="${c.image}" alt="${c.name}" />
-          <div class="character-info">
-            <div class="name">${c.name}</div>
-            <div class="status">Status: ${c.status}</div>
-            <div class="species">Species: ${c.species}</div>
-            <div class="gender">Gender: ${c.gender}</div>
-          </div>
-        </div>
-      `
-        )
-        .join("");
-    } catch {
-      resultsContainer.innerHTML = "<div>No results found</div>";
+
+      if (!results.length) {
+        resultsContainer.innerHTML = `<div style="color: red;">No results found</div>`;
+        return;
+      }
+
+      resultsContainer.innerHTML = template({ results });
+    } catch (error) {
+      resultsContainer.innerHTML = `<div style="color: red;">No results found</div>`;
     }
   }
 }

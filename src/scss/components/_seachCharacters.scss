@@ -1,14 +1,3 @@
-$bg-color: #121212;
-$menu-bg: #000;
-$card-bg: #292929;
-$accent-color: #a1d373;
-$text-color: #fafafa;
-$text-secondary: #a1d373;
-$border-radius: 12px;
-$search-bg: #1f1f1f;
-$input-bg: #333;
-$input-focus-bg: #3a3a3a;
-
 body.no-scroll {
   overflow: hidden;
   height: 100%;
@@ -18,84 +7,58 @@ body.no-scroll {
 }
 .side-menu__close-btn {
   font-size: 10px;
-  border-radius: $border-radius;
-  background: $accent-color;
-  color: $bg-color;
+  border-radius: $radius-btn;
+  background: $color-background-secondary;
+  color: $color-background-text;
   cursor: pointer;
-
   &:hover {
-    background: lighten($accent-color, 10%);
+    background: lighten($color-background-secondary, 10%);
   }
 }
-
 @media (min-width: 720px) {
   .side-menu__close-btn {
     font-size: 15px;
   }
 }
-
 @media (min-width: 1040px) {
   .side-menu__close-btn {
     font-size: 20px;
   }
 }
-
 .btn-open-search svg.icon {
-  stroke: $text-color;
+  stroke: $color-text-primary;
   fill: #0d171d;
 }
-
 .btn-open-search {
-  .search-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 16px;
-    color: $text-color;
-    border: none;
-    border-radius: 36px;
-    font-size: 14px;
-    cursor: pointer;
-    border-color: $text-color;
-  }
-
-  .search-btn .icon {
-    stroke: $menu-bg;
-  }
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 25px;
-  height: 36px;
-  width: 126px;
   height: 44px;
   background-color: $color-background-text;
-  border: 0.1px solid #fafafa4d;
+  border: 1px solid $color-border;
   border-radius: 50px;
-  color: $text-color;
+  color: $color-text-primary;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-
-  svg {
+  color: $color-background-primary;
+  svg.icon {
     width: 16px;
     height: 16px;
-    fill: $text-color;
+    stroke: $color-background-primary;
+    fill: none;
   }
-
   &:hover {
-    background-color: $accent-color;
-    color: $bg-color;
-    border-color: $bg-color;
+    background-color: $color-background-secondary;
+    color: $color-background-primary;
+    border-color: $color-background-primary;
   }
-
   &:active {
     transform: scale(0.97);
   }
 }
-
-// Backdrop
 .backdrop {
   position: fixed;
   top: 0;
@@ -105,14 +68,11 @@ body.no-scroll {
   background: rgba(0, 0, 0, 0.6);
   z-index: 900;
   display: none;
-
   &.open {
     display: block;
   }
-
   scrollbar-width: thin;
-  scrollbar-color: $accent-color transparent;
-
+  scrollbar-color: $color-background-secondary transparent;
   &::-webkit-scrollbar {
     width: 6px;
   }
@@ -120,59 +80,52 @@ body.no-scroll {
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $accent-color;
-    border-radius: $border-radius;
+    background-color: $color-background-secondary;
+    border-radius: $radius-btn;
   }
 }
-
 .side-menu {
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   height: 100%;
-  background: $menu-bg;
+  background: $color-background-text;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   padding: 20px;
-
   &.open {
     transform: translateX(0);
   }
-
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-
     &-title {
       font-size: 1.3rem;
       font-weight: 600;
-      color: $text-secondary;
+      color: $color-background-secondary;
     }
-
     &-close-btn {
-      background: $accent-color;
+      background: $color-background-secondary;
       border: none;
       font-size: 1.8rem;
       cursor: pointer;
-      border-radius: $border-radius;
+      border-radius: $radius-btn;
       width: 35px;
       height: 35px;
-
       &:hover {
-        background: lighten($accent-color, 10%);
+        background: lighten($color-background-secondary, 10%);
       }
     }
   }
-
   .side-menu__title {
-    color: $text-secondary;
+    color: $color-background-secondary;
     font-size: 1.3rem;
     font-weight: 600;
   }
@@ -183,26 +136,22 @@ body.no-scroll {
     gap: 15px;
     overflow-y: auto;
     padding-bottom: 20px;
-
     .side-menu__input {
       padding: 12px;
-      border-radius: $border-radius;
+      border-radius: $radius-btn;
       border: none;
       outline: none;
       font-size: 1rem;
       width: 100%;
-      background: $input-bg;
-      color: $text-color;
-
+      background: $color-background-primary;
+      color: $color-text-primary;
       &::placeholder {
-        color: lighten($text-color, 30%);
+        color: lighten($color-text-primary, 30%);
       }
-
       &:focus {
-        background: $input-focus-bg;
+        background: $color-background-decor-second;
       }
     }
-
     .side-menu__results {
       display: flex;
       flex-wrap: wrap;
@@ -210,10 +159,8 @@ body.no-scroll {
       overflow-y: auto;
       max-height: calc(100% - 60px);
       padding-bottom: 20px;
-
       scrollbar-width: thin;
-      scrollbar-color: $accent-color transparent;
-      color: red;
+      scrollbar-color: $color-background-secondary transparent;
       &::-webkit-scrollbar {
         width: 6px;
       }
@@ -221,13 +168,12 @@ body.no-scroll {
         background: transparent;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: $accent-color;
-        border-radius: $border-radius;
+        background-color: $color-background-secondary;
+        border-radius: $radius-btn;
       }
     }
   }
 }
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -236,10 +182,8 @@ body.no-scroll {
   overflow-y: auto;
   max-height: 80vh;
   padding-bottom: 20px;
-
   scrollbar-width: thin;
-  scrollbar-color: $accent-color transparent;
-
+  scrollbar-color: $color-background-secondary transparent;
   &::-webkit-scrollbar {
     width: 6px;
   }
@@ -247,32 +191,47 @@ body.no-scroll {
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $accent-color;
-    border-radius: $border-radius;
+    background-color: $color-background-secondary;
+    border-radius: $radius-btn;
   }
 }
-
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: $color-background-decor-second transparent;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-background-decor-second;
+    border-radius: $radius-btn;
+  }
+}
 .character-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 12px;
-
-  width: 60%;
+  width: 45%;
   padding: 10px;
-
-  background: $card-bg;
-  border-radius: $border-radius;
-  color: $text-color;
+  background: $color-background-secondary;
+  border-radius: $radius-btn;
+  color: $color-background-primary;
   border: 1px solid transparent;
-
   transition: background 0.2s ease, border 0.2s ease;
-
   &:hover {
-    border-color: $accent-color;
-    background: lighten($card-bg, 3%);
+    border-color: $color-background-decor-second;
+    background: lighten($color-background-decor-second, 3%);
   }
-
   img {
     width: 60px;
     height: 60px;
@@ -280,100 +239,88 @@ body.no-scroll {
     object-fit: cover;
     flex-shrink: 0;
   }
-
   .character-info {
     display: flex;
     flex-direction: column;
     gap: 2px;
     overflow: hidden;
-
     .name {
       font-size: 1rem;
       font-weight: 600;
-      color: $text-secondary;
+      color: $color-background-primary;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
     .status,
     .species,
     .gender {
       font-size: 0.8rem;
-      color: lighten($text-color, 30%);
+      color: lighten($color-background-secondary, 30%);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
     .origin,
     .location {
       font-size: 0.75rem;
-      color: lighten($text-color, 50%);
+      color: lighten($color-background-primary, 50%);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
   }
 }
-
 .character-info {
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-
   .name {
     font-weight: bold;
     font-size: 1rem;
-    color: $text-secondary;
+    color: $color-background-primary;
   }
-
   .status,
   .species,
   .gender {
     font-size: 0.8rem;
-    color: lighten($text-color, 30%);
+    color: lighten($color-background-primary, 30%);
     word-wrap: break-word;
   }
-
   .origin,
   .location {
     font-size: 0.75rem;
-    color: lighten($text-color, 50%);
+    color: lighten($color-background-primary, 50%);
     word-wrap: break-word;
   }
 }
-
 @media (max-width: 720px) {
   .character-card {
     flex: 1 1 calc(50% - 12px);
     font-size: 0.85rem;
   }
-
   .side-menu {
     width: 100%;
     max-width: 100%;
     padding: 15px;
   }
 }
-
 @media (min-width: 720px) {
   .character-card {
     flex: 1 1 calc(33.33% - 12px);
   }
   .side-menu {
-    max-width: 65%;
+    max-width: 60%;
     padding: 20px;
   }
 }
-
 @media (min-width: 1040px) {
   .character-card {
     flex: 1 1 calc(25% - 12px);
   }
   .side-menu {
-    max-width: 45%;
+    max-width: 50%;
     padding: 30px;
   }
 }
