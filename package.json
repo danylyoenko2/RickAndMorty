@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url ./"
+    "build": "parcel build src/*.html --public-url ./",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,16 @@
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.16.1",
     "@parcel/transformer-sass": "^2.16.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "parcel": "^2.16.3",
-    "posthtml-include": "^2.0.1"
+    "posthtml-include": "^2.0.1",
+    "prettier": "^3.7.4"
   },
   "dependencies": {
     "handlebars": "^4.7.8"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier --write"
   }
 }

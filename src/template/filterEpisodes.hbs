@@ -1,54 +1,61 @@
 <label
-  class="filter-form__label filter-form__label--input filter-episodes__label filter"
+  class='filter-form__label filter-form__label--input filter-episodes__label filter'
 >
   Name
-  <div class="filter-form__wrapper filter-form__wrapper--input">
+  <div class='filter-form__wrapper filter-form__wrapper--input'>
     <input
-      class="filter-form__input filter-episodes__input"
-      type="text"
-      name="nameFilter"
-      placeholder="Enter name"
+      class='filter-form__input filter-episodes__input'
+      type='text'
+      name='nameFilter'
+      placeholder='Enter name'
     />
     <button
-      type="submit"
-      class="filter-form__btn filter-episodes__btn"
+      type='submit'
+      class='filter-form__btn filter-episodes__btn'
     ></button>
   </div>
 </label>
-<div class="filter-form__wrapper filter-form__wrapper">
-  <label class="filter-form__label">Episode code
+<div class='filter-form__wrapper filter-form__wrapper'>
+  <label class='filter-form__label'>Episode code
 
     <input
-      class="filter-form__input"
-      type="hidden"
-      name="episodesFilter"
-      {{! value="" }}
-      {{! readonly }}
+      class='filter-form__input'
+      type='hidden'
+      name='episodesFilter'
+      value=''
       hidden
     />
   </label>
-  <div class="filter-form__select" data-select data-name="episodes">
+  <div class='filter-form__select' data-select data-name='episodes'>
 
-    <div class="filter-form__trigger" data-select-trigger>
-      <span class="filter-form__text" data-select-text>
+    <div class='filter-form__trigger' data-select-trigger>
+      <span class='filter-form__text' data-select-text>
         All season</span>
-      <span class="filter-form__arrow">
+      <span class='filter-form__arrow'>
 
       </span>
     </div>
     <ul
-      class="filter-form__list filter-form__list--episodes"
+      class='filter-form__list filter-form__list--episodes'
       data-filter-list-episodes
     >
-      {{#each this}}
-        <li>
+      <li class='filter-form__item'>
 
-          <h3>{{this.season}} season</h3>
-          <ul>
+        <h3
+          class='filter-form__option filter-form__season filter-form__season--mod'
+          data-value='All season'
+        >All season</h3>
+
+      </li>
+      {{#each this}}
+        <li class='filter-form__item'>
+
+          <h3 class='filter-form__season'>{{this.season}} season</h3>
+          <ul class='filter-form__options'>
             {{#each this.series}}
               <li
-                class="filter-form__option"
-                data-value="{{this}} series"
+                class='filter-form__option'
+                data-value='{{this}} series'
               >{{this}} series</li>
             {{/each}}
           </ul>

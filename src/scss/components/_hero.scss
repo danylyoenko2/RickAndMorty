@@ -8,6 +8,9 @@
   overflow: hidden;
   position: relative;
 }
+.hero-radius {
+  border-radius: 0 0 60px 60px;
+}
 
 .hero__middle {
   display: flex;
@@ -43,8 +46,25 @@
   user-select: none;
   pointer-events: none;
   margin: 0 auto;
+  animation: circleMove 10s linear infinite;
 }
-
+@keyframes circleMove {
+  0% {
+    transform: translate(0, -10px);
+  }
+  25% {
+    transform: translate(10px, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-10px, 0);
+  }
+  100% {
+    transform: translate(0, -10px);
+  }
+}
 .hero__title {
   width: 90%;
   height: auto;
@@ -60,6 +80,7 @@
   max-width: 290px;
   margin-top: 20px;
   margin: auto;
+  padding-bottom: 65px;
 }
 
 .hero__text-secound {
@@ -69,8 +90,8 @@
 /* Scroll button */
 .hero__button {
   position: absolute;
-  bottom: 40px;
-  right: 20px;
+  bottom: 45px;
+  right: 45px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -81,6 +102,18 @@
   justify-content: center;
   transition: 0.3s ease;
   cursor: pointer;
+}
+.hero__button {
+  animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 .hero__button:hover {
@@ -96,8 +129,12 @@
 /* ---------- TABLET 768px ---------- */
 
 @media (min-width: 768px) {
+  .hero-radius {
+    border-radius: 0 0 100px 100px;
+  }
   .hero__container {
     max-width: 740px;
+    padding-bottom: 65px;
   }
 
   .hero__background-img {
@@ -112,6 +149,7 @@
   .hero__text {
     font-size: 16px;
     max-width: 420px;
+    padding-bottom: 0;
   }
 
   .hero__button {
@@ -122,6 +160,8 @@
   .hero__button-icon {
     width: 32px;
     height: 32px;
+    right: 32px;
+    bottom: 65px;
   }
   .hero__title {
     width: 60%;
@@ -139,14 +179,13 @@
   .hero__button {
     position: relative;
     margin-left: 150px;
-    top: 570px;
+    top: 480px;
+    width: 80px;
+    height: 80px;
+    right: 80px;
   }
   .hero__container {
     max-width: 1200px;
-  }
-
-  .hero__container {
-    margin-bottom: 65px;
   }
 
   .wrap__container {
@@ -174,12 +213,6 @@
 
   .hero__text {
     display: none;
-  }
-
-  .hero__button {
-    width: 80px;
-    height: 80px;
-    right: 40px;
   }
 
   .hero__button-icon {

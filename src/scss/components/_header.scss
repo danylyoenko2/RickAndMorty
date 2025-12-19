@@ -8,6 +8,7 @@
   align-items: center;
 }
 .header__nav {
+  inline-size: 100%;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -36,9 +37,9 @@
   gap: 8px;
   cursor: pointer;
   &::before {
-    content: "";
+    content: '';
     display: inline-block;
-    background-image: url("../images/search-white.svg");
+    background-image: url('../images/search-white.svg');
     width: 18px;
     height: 18px;
   }
@@ -62,10 +63,10 @@
   height: 75px;
 
   &::before {
-    content: "";
+    content: '';
     flex-grow: 1;
     display: block;
-    background-image: url("../images/logo.png");
+    background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

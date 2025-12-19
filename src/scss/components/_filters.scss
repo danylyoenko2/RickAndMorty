@@ -101,7 +101,6 @@
   &__list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 4px;
     padding: 14px 24px;
     position: absolute;
@@ -110,12 +109,33 @@
     background-color: $color-background-primary;
     border: 1px solid $color-background-primary;
     border-radius: 20px;
-    overflow: hidden;
+    overflow-y: scroll;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 10;
+    max-height: 215px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__season {
+    font-weight: 600;
+    color: $color-background-decor-second;
+
+    &--mod {
+      font-weight: 500;
+      color: $color-background-text;
+    }
+  }
+
+  &__options {
+    padding-left: 8px;
   }
   &__option {
     font-size: 12px;
@@ -219,5 +239,12 @@
     &__input {
       max-width: 150px;
     }
+  }
+}
+
+.filter-form__season {
+  &--mod {
+    font-weight: 500;
+    color: $color-background-text;
   }
 }

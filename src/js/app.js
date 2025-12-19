@@ -1,63 +1,86 @@
-import { CharacterCards } from "./components/CharacterCards";
-import { Scroll } from "./components/scroll";
-import { createHeaderMarkUp } from "./components/header";
-import { Filter } from "./components/СustomSelect";
-import { handleChange } from "./logic/filterLogic";
-import { RickAndMortyService } from "./service/RickAndMortyService";
-import { FilterEpisodes } from "./components/filterEpisodes";
-import Handlebars from "handlebars";
-import headerHbs from "bundle-text:../template/headerBtn.hbs";
-import { initSearch } from "./components/search";
+import { CharacterCards } from './components/CharacterCards';
+import { Scroll } from './components/scroll';
+import { createHeaderMarkUp } from './components/header';
+import { Filter } from './components/СustomSelect';
+import { handleChange, handleChangeEpisode } from './logic/filterLogic';
+import { FilterEpisodes } from './components/filterEpisodes';
+import { EpisodCards } from './components/episodeRender';
+import {
+  handleOpenModalChars,
+  handleOpenModalEpisode,
+} from './logic/modalLogic';
+import { RickAndMortyService } from './service/RickAndMortyService';
+import { initSearch } from './components/search';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const headerContainer = document.querySelector("[data-header]");
-
-  headerContainer.innerHTML = Handlebars.compile(headerHbs)({});
-
-  initSearch();
-});
-
-const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
+const LoadMoreBtn = document.querySelector('[data-loadMoreBtn]');
+const charCardsList = document.querySelector('[data-character-list]');
+const episCardsList = document.querySelector('[data-episode]');
+const filterFormCharacters = document.querySelector('[data-filter-form]');
+const filterFormEpisodes = document.querySelector('[data-filter-episodes]');
 
 localStorage.setItem(
-  "filtersData",
+  'filtersData',
   JSON.stringify({
     page: 1,
     totalPages: 1,
-    status: "",
-    species: "",
-    type: "",
-    gender: "",
-  })
+    status: '',
+    species: '',
+    type: '',
+    gender: '',
+  }),
 );
 
-const handleLoadMore = () => CharacterCards();
+localStorage.setItem(
+  'filtersDataEpisode',
+  JSON.stringify({
+    page: 1,
+    totalPages: 1,
+    name: '',
+    episode: '',
+  }),
+);
+const handleLoadMoreChars = () => CharacterCards();
+const handleLoadMoreEpis = () => EpisodCards();
 
-document.addEventListener("DOMContentLoaded", () => {
+const test = async () =>
+  console.log(await RickAndMortyService.getAllEpisodeById(1));
+test();
+document.addEventListener('DOMContentLoaded', () => {
   if (
-    location.pathname === "/" ||
-    location.pathname === "/RickAndMorty/" ||
-    location.pathname === "/index.html" ||
-    location.pathname === "/RickAndMorty/index.html"
+    location.pathname === '/' ||
+    location.pathname === '/RickAndMorty/' ||
+    location.pathname === '/index.html' ||
+    location.pathname === '/RickAndMorty/index.html'
   ) {
     Scroll();
     createHeaderMarkUp();
   } else if (
-    location.pathname === "/characters.html" ||
-    location.pathname === "/RickAndMorty/characters.html"
+    location.pathname === '/characters.html' ||
+    location.pathname === '/RickAndMorty/characters.html'
   ) {
     createHeaderMarkUp(false);
     CharacterCards({ page: 1 });
-
     Filter();
-    LoadMoreBtn.addEventListener("click", handleLoadMore);
-    document.addEventListener("keypress", handleChange);
+
+    const selects = filterFormCharacters.querySelectorAll(
+      'input[type="hidden"]',
+    );
+
+    LoadMoreBtn.addEventListener('click', handleLoadMoreChars);
+    charCardsList.addEventListener('click', handleOpenModalChars);
+    selects.forEach((input) => input.addEventListener('change', handleChange));
+    filterFormCharacters.addEventListener('submit', handleChange);
   } else if (
-    location.pathname === "/episodes.html" ||
-    location.pathname === "/RickAndMorty/episodes.html"
+    location.pathname === '/episodes.html' ||
+    location.pathname === '/RickAndMorty/episodes.html'
   ) {
     createHeaderMarkUp(false);
     FilterEpisodes();
-    document.addEventListener("keypress", handleChange);
+    EpisodCards();
+
+    episCardsList.addEventListener('click', handleOpenModalEpisode);
+    filterFormEpisodes.addEventListener('submit', handleChangeEpisode);
+    filterFormEpisodes.addEventListener('change', handleChangeEpisode);
+    LoadMoreBtn.addEventListener('click', handleLoadMoreEpis);
   }
 });

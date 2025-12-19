@@ -1,0 +1,36 @@
+<div class='backdrop'>
+  <div class='modal modal-episode' data-modal>
+    <button class='modal__close' data-modal-close></button>
+
+    <div class='modal-episode__container'>
+      <h2 class='modal-episode__title'>{{this.episodeData.name}}</h2>
+      <ul class='modal-episode__info'>
+        <li class='modal-episode__item'>
+          <span class='modal__subtitle modal-episode__subtitle'>Id</span>
+          <p
+            class='modal__text modal-episode__text'
+          >{{this.episodeData.id}}</p></li>
+        <li class='modal-episode__item'>
+          <span class='modal__subtitle modal-episode__subtitle'>Air date</span>
+          <p
+            class='modal__text modal-episode__text'
+          >{{this.episodeData.air_date}}</p></li>
+      </ul>
+      <div class='modal-episode__chars'>
+        <h3 class='modal-episode__title'>Characters</h3>
+        <ul class='modal-episode__list'>
+          {{#each this.characterData}}
+            <li class='modal-epidose__char'>
+              <artcile class='char'>
+                <div class='char__photo'>
+                  <img src='{{image}}' alt='{{name}}' />
+                </div>
+                <h4 class='char__name'>{{name}}</h4>
+              </artcile>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
