@@ -1,21 +1,19 @@
-<ul class="episodes__list">
-  {{#each this}}
-    <li class="episodes__item">
-      <article class="episode">
-        <h2 class="episode__title">{{this.name}}</h2>
-        <div class="episode__content">
-          <ul class="episode__list">
-            <li class="episode__item">
-              <h3 class="episode__subtitle">Season</h3>
-              <p class="episode__season">{{this.episode}}</p>
-            </li>
-            <li class="episode__item">
-              <h3 class="episode__subtitle">Air date</h3>
-              <p class="episode__date">{{this.air_date}}</p>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </li>
-  {{/each}}
-</ul>
+{{#each this}}
+  <li class='episodes__item'>
+    <article class='episode' data-episode-id='{{this.id}}'>
+      <h2 class='episode__title'>{{this.name}}</h2>
+      <div class='episode__content'>
+        <ul class='episode__list'>
+          <li class='episode__item'>
+            <h3 class='episode__subtitle'>Season</h3>
+            <p class='episode__season'>{{this.episode}}</p>
+          </li>
+          <li class='episode__item'>
+            <h3 class='episode__subtitle'>Air date</h3>
+            <p class='episode__date'>{{this.air_date}}</p>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </li>
+{{/each}}

@@ -1,17 +1,18 @@
-import Handlebars from "handlebars";
-import FilterEpisodesSource from "bundle-text:../../template/filterEpisodes.hbs";
-import { RickAndMortyService } from "../service/RickAndMortyService";
-import { selectLogic } from "./СustomSelect";
-import { filterDataEpisodes } from "../helpers/filterHelpers";
+import Handlebars from 'handlebars';
+import FilterEpisodesSource from 'bundle-text:../../template/filterEpisodes.hbs';
+import { RickAndMortyService } from '../service/RickAndMortyService';
+import { selectLogic } from './СustomSelect';
+import { filterDataEpisodes } from '../helpers/filterHelpers';
 
-const episodesForm = document.querySelector("[data-filter-episodes]");
+const episodesForm = document.querySelector('[data-filter-episodes]');
 
 const filterEpisodesTemp = Handlebars.compile(FilterEpisodesSource);
 
 export const FilterEpisodes = async () => {
   const { info, results } = await RickAndMortyService.getAllEpisodes();
-  console.log(results);
-  const asdad = results.map((item) => {
+  const episodeIds = Array.from({ length: info.count }, (_, i) => i + 1);
+  const allEpisodes = await RickAndMortyService.getAllEpisodeById(episodeIds);
+  allEpisodes.map((item) => {
     const episodeString = item.episode;
 
     const regex = /S(\d+)E(\d+)/i;
@@ -44,6 +45,6 @@ export const FilterEpisodes = async () => {
   });
 
   const filterEpisodesHTML = filterEpisodesTemp(filterDataEpisodes);
-  episodesForm.insertAdjacentHTML("beforeend", filterEpisodesHTML);
+  episodesForm.insertAdjacentHTML('beforeend', filterEpisodesHTML);
   selectLogic();
 };

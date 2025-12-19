@@ -1,0 +1,67 @@
+.modal-episode {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    padding-bottom: 40px;
+    border: 2px solid $color-background-decor-second;
+    border-radius: $radius-card-image;
+  }
+  &__title {
+    font-size: 18px;
+  }
+  &__info {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 26px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    gap: 14px 20px;
+    max-height: 240px;
+  }
+
+  &__chars {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+.char {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  &__photo {
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 50px;
+    max-height: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-episode {
+    &__title {
+      font-size: 24px;
+    }
+    &__info {
+      font-size: 16px;
+    }
+
+    &__chars {
+      gap: 16px;
+    }
+  }
+}
