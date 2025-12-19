@@ -8,6 +8,9 @@
   overflow: hidden;
   position: relative;
 }
+.hero-radius {
+  border-radius: 0 0 60px 60px;
+}
 
 .hero__middle {
   display: flex;
@@ -43,8 +46,25 @@
   user-select: none;
   pointer-events: none;
   margin: 0 auto;
+  animation: circleMove 10s linear infinite;
 }
-
+@keyframes circleMove {
+  0% {
+    transform: translate(0, -10px);
+  }
+  25% {
+    transform: translate(10px, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-10px, 0);
+  }
+  100% {
+    transform: translate(0, -10px);
+  }
+}
 .hero__title {
   width: 90%;
   height: auto;
@@ -96,8 +116,12 @@
 /* ---------- TABLET 768px ---------- */
 
 @media (min-width: 768px) {
+  .hero-radius {
+    border-radius: 0 0 100px 100px;
+  }
   .hero__container {
     max-width: 740px;
+    padding-bottom: 65px;
   }
 
   .hero__background-img {

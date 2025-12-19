@@ -1,0 +1,43 @@
+.filter-episodes {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  justify-content: center;
+  padding: 64px 0;
+  overflow: visible;
+}
+
+.filter-episodes__label {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  line-height: 1.29;
+  color: $color-text-primary;
+  position: relative;
+}
+
+.filter-episodes__input::placeholder {
+  color: $color-text-primary;
+}
+
+.filter-episodes__btn {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/search.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .filter-episodes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-episodes__input {
+    inline-size: 100%;
+  }
+}

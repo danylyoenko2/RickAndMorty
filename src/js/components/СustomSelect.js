@@ -4,15 +4,15 @@ import { filterData } from "../helpers/filterHelpers";
 
 const filterTemp = Handlebars.compile(filterSource);
 
-const selectLogic = () => {
+export const selectLogic = () => {
   const selects = document.querySelectorAll("[data-select]");
   selects.forEach((select) => {
     const selectTrigger = select.querySelector("[data-select-trigger]");
     const selectText = select.querySelector("[data-select-text]");
     const selectOptions = select.querySelectorAll(".filter-form__option");
-    const selectInput = document.querySelector(
-      `[name="${select.dataset.name}Filter"]`
-    );
+    const selectInput = document.querySelector([
+      `[name="${select.dataset.name}Filter"]`,
+    ]);
 
     selectTrigger.addEventListener("click", (e) => {
       e.stopPropagation();
