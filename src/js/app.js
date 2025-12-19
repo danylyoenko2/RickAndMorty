@@ -9,8 +9,7 @@ import {
   handleOpenModalChars,
   handleOpenModalEpisode,
 } from './logic/modalLogic';
-import { RickAndMortyService } from './service/RickAndMortyService';
-import { initSearch } from './components/search';
+import './components/mainCgharactersChange';
 
 const LoadMoreBtn = document.querySelector('[data-loadMoreBtn]');
 const charCardsList = document.querySelector('[data-character-list]');
@@ -42,9 +41,6 @@ localStorage.setItem(
 const handleLoadMoreChars = () => CharacterCards();
 const handleLoadMoreEpis = () => EpisodCards();
 
-const test = async () =>
-  console.log(await RickAndMortyService.getAllEpisodeById(1));
-test();
 document.addEventListener('DOMContentLoaded', () => {
   if (
     location.pathname === '/' ||

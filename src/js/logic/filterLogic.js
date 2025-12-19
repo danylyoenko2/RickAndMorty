@@ -7,7 +7,7 @@ const procValue = (value) => {
   if (value === 'none' || value === 'All season') {
     return '';
   }
-  return value.trim();
+  return value;
 };
 
 export const handleChange = (e) => {
