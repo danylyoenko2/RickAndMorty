@@ -1,55 +1,66 @@
-import { CharacterCards } from "./components/CharacterCards";
-import { Scroll } from "./components/scroll";
-import { createHeaderMarkUp } from "./components/header";
-import { Filter } from "./components/СustomSelect";
-import { handleChange } from "./logic/filterLogic";
-import { RickAndMortyService } from "./service/RickAndMortyService";
-import { FilterEpisodes } from "./components/filterEpisodes";
-import { EpisodCards } from "./components/episodeRender";
-import "./components/mainCgharactersChange";
+import { CharacterCards } from './components/CharacterCards';
+import { Scroll } from './components/scroll';
+import { createHeaderMarkUp } from './components/header';
+import { Filter } from './components/СustomSelect';
+import { handleChange } from './logic/filterLogic';
+import { RickAndMortyService } from './service/RickAndMortyService';
+import { FilterEpisodes } from './components/filterEpisodes';
+import { EpisodCards } from './components/episodeRender';
+import './components/mainCgharactersChange';
+import Handlebars from 'handlebars';
+import headerHbs from 'bundle-text:../template/headerBtn.hbs';
+import { initSearch } from './components/search';
 
-const LoadMoreBtn = document.querySelector("[data-loadMoreBtn]");
+document.addEventListener('DOMContentLoaded', () => {
+  const headerContainer = document.querySelector('[data-header]');
+
+  headerContainer.innerHTML = Handlebars.compile(headerHbs)({});
+
+  initSearch();
+});
+
+const LoadMoreBtn = document.querySelector('[data-loadMoreBtn]');
 
 localStorage.setItem(
-  "filtersData",
+  'filtersData',
   JSON.stringify({
     page: 1,
     totalPages: 1,
-    status: "",
-    species: "",
-    type: "",
-    gender: "",
-  })
+    status: '',
+    species: '',
+    type: '',
+    gender: '',
+  }),
 );
 
 const handleLoadMore = () => CharacterCards();
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   if (
-    location.pathname === "/" ||
-    location.pathname === "/RickAndMorty/" ||
-    location.pathname === "/index.html" ||
-    location.pathname === "/RickAndMorty/index.html"
+    location.pathname === '/' ||
+    location.pathname === '/RickAndMorty/' ||
+    location.pathname === '/index.html' ||
+    location.pathname === '/RickAndMorty/index.html'
   ) {
     Scroll();
     createHeaderMarkUp();
   } else if (
-    location.pathname === "/characters.html" ||
-    location.pathname === "/RickAndMorty/characters.html"
+    location.pathname === '/characters.html' ||
+    location.pathname === '/RickAndMorty/characters.html'
   ) {
     createHeaderMarkUp(false);
     CharacterCards({ page: 1 });
 
     Filter();
-    LoadMoreBtn.addEventListener("click", handleLoadMore);
-    document.addEventListener("keypress", handleChange);
+    LoadMoreBtn.addEventListener('click', handleLoadMore);
+    document.addEventListener('keypress', handleChange);
   } else if (
-    location.pathname === "/episodes.html" ||
-    location.pathname === "/RickAndMorty/episodes.html"
+    location.pathname === '/episodes.html' ||
+    location.pathname === '/RickAndMorty/episodes.html'
   ) {
     createHeaderMarkUp(false);
     FilterEpisodes();
     EpisodCards();
-    document.addEventListener("keypress", handleChange);
+    document.addEventListener('keypress', handleChange);
   }
 });
