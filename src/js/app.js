@@ -10,6 +10,7 @@ import {
   handleOpenModalEpisode,
 } from './logic/modalLogic';
 import { RickAndMortyService } from './service/RickAndMortyService';
+import { initSearch } from './components/search';
 
 const LoadMoreBtn = document.querySelector('[data-loadMoreBtn]');
 const charCardsList = document.querySelector('[data-character-list]');
@@ -38,7 +39,6 @@ localStorage.setItem(
     episode: '',
   }),
 );
-
 const handleLoadMoreChars = () => CharacterCards();
 const handleLoadMoreEpis = () => EpisodCards();
 

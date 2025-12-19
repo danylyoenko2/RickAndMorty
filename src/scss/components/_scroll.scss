@@ -30,8 +30,8 @@
   overflow-x: auto;
   padding-bottom: 8px;
   margin-bottom: 20px;
-  scrollbar-width: none;  
-  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .episode__card img {
   width: auto;
@@ -53,50 +53,49 @@
   transition: transform 0.3s ease;
 }
 .episodes__btn:hover {
-   transform: scale(1.05); 
+  transform: scale(1.05);
 }
 .episode__card {
   flex: 0 0 auto;
   width: 220px;
 }
 
-
 @media (min-width: 768px) {
   .slider__container {
-  padding: 96px 0px 96px;
-  border-radius: 80px;
-  overflow: hidden;
-}
+    padding: 96px 0px 96px;
+    border-radius: 80px;
+    overflow: hidden;
+  }
 
-.slider__title {
-  max-width: 610px;
-  font-size: 44px;
-  margin-bottom: 64px;
-  line-height: 1.09;
-  padding: 0 0 0 32px;
-}
-.episodes__scroll {
-  gap: 24px;
-  margin-bottom: 32px; 
-}
-.episode__card img {
-  width: auto;
-  height: 314px;
-  border-radius: 18px;
-  border: 3px solid $color-background-secondary;
-}
+  .slider__title {
+    max-width: 610px;
+    font-size: 44px;
+    margin-bottom: 64px;
+    line-height: 1.09;
+    padding: 0 0 0 32px;
+  }
+  .episodes__scroll {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .episode__card img {
+    width: auto;
+    height: 314px;
+    border-radius: 18px;
+    border: 3px solid $color-background-secondary;
+  }
 
-.episodes__btn {
-  margin-right: 32px;
-  padding: 12px 24px;
-  border-radius: 1000px;
-  font-size: 14px;
-  line-height: 1.29;
-  font-weight: 600;
-}
-.episode__card {
-  width: 278px;
-}
+  .episodes__btn {
+    margin-right: 32px;
+    padding: 12px 24px;
+    border-radius: 1000px;
+    font-size: 14px;
+    line-height: 1.29;
+    font-weight: 600;
+  }
+  .episode__card {
+    width: 278px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -105,13 +104,13 @@
     padding: 0 0 0 128px;
   }
   .slider__container {
-  border-radius: 100px;
-  overflow: hidden;
-}
-.episodes__btn {
-  margin-right: 128px;
-  border-radius: 1000px;
-  width: 113px;
-  height: 42px;
-}
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .episodes__btn {
+    margin-right: 128px;
+    border-radius: 1000px;
+    width: 113px;
+    height: 42px;
+  }
 }
